@@ -8,7 +8,7 @@
 void main()
 {
     int fd;
-    fd = open("/tmp/myfifo", O_WRONLY);
+    fd = open("/tmp/server_read", O_WRONLY);
     if (fd < 0)
     {
         printf("failed\n");
