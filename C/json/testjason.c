@@ -56,7 +56,7 @@ void func3()
 	char *buf = cJSON_Print(json);
 
     /* 打开文件并写入json内容 */
-	FILE * fp = fopen("create.json", "w");
+	FILE * fp = fopen("func3.json", "w");
 	fwrite(buf, strlen(buf), 1, fp);
 	free(buf);
 	fclose(fp);
@@ -70,7 +70,7 @@ void func4()
 	cJSON_AddStringToObject(json, "country", "china");
 
 	cJSON * array = NULL;	
-	cJSON_AddItemToObject(json,"stars",array = cJSON_CreateArray());
+	cJSON_AddItemToObject(json,"stars", array = cJSON_CreateArray());
 
 	cJSON * obj = NULL;
 	cJSON_AddItemToArray(array, obj = cJSON_CreateObject());
@@ -82,7 +82,7 @@ void func4()
 	cJSON_AddItemToObject(obj, "address", cJSON_CreateString("HK"));
 
 	cJSON_AddItemToArray(array, obj = cJSON_CreateObject());
-	cJSON_AddStringToObject(array, "name", "eddie");
+	cJSON_AddStringToObject(obj, "name", "eddie");
 	cJSON_AddStringToObject(obj, "address", "TaiWan");
 
 	FILE *fp = fopen("func4.json", "w");
@@ -185,5 +185,5 @@ void func5()
 
 void main()
 {
-    func5();
+    func4();
 }
